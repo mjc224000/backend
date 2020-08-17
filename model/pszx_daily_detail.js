@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const {Model, INTEGER, STRING, JSON, DATE, FLOAT} = Sequelize;
+const {sequelize} = require('./com')
 
 class PSZXDailyDetail extends Model {
-
 }
 
 PSZXDailyDetail.init(
@@ -32,30 +32,36 @@ PSZXDailyDetail.init(
             type: FLOAT,
             comment: "剩余"
         },
-        output:{
-            type:FLOAT,
-            comment:"出库量"
+        output: {
+            type: FLOAT,
+            comment: "出库量"
         },
-        outside:{
-            type:FLOAT,
-            comment:"外委作业量"
+        outside: {
+            type: FLOAT,
+            comment: "外委作业量"
         },
-        actual_weight:{
-            type:FLOAT,
-            comment:"实际重量"
+        actual_weight: {
+            type: FLOAT,
+            comment: "实际重量"
         },
-        actual_car:{
-            type:INTEGER,
-            comment:"实装车数"
+        actual_car: {
+            type: INTEGER,
+            comment: "实装车数"
         },
-        stock:{
-            type:INTEGER,
-            comment:"库存"
+        stock: {
+            type: INTEGER,
+            comment: "库存"
         },
-        comment:{
-            type:STRING,
-            comment:"备注"
+        comment: {
+            type: STRING,
+            comment: "备注"
         }
 
+    }, {
+        sequelize,
+        tableName: 'pszx_daily_detail'
     }
 )
+module.exports = {
+    PSZXDailyDetail
+}

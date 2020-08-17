@@ -12,7 +12,7 @@ PSZXDaily.init({
         type: INTEGER,
         autoIncrement: true
     },
-     record_date: {
+    record_date: {
         type: DATE,
         comment: "统计时间"
     },
@@ -20,3 +20,6 @@ PSZXDaily.init({
 
 }, {sequelize, modelName: "wl_daily", timestamps: true})
 
+module.exports = {
+    PSZXDaily
+}
