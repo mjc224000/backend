@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const {Model, INTEGER, STRING, DATE, JSON } = Sequelize;
+const {Model, INTEGER, STRING, DATE, JSON} = Sequelize;
 const {sequelize} = require('./com');
 
 class DockBulkCommodity extends Model {
@@ -31,4 +31,10 @@ DockBulkCommodity.init({
         type: STRING,
         comment: "执行车队"
     }
+}, {
+    sequelize,
+    tableName: "dock_bulk_commodity"
 })
+module.exports = {
+    DockBulkCommodity
+}

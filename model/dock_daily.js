@@ -17,13 +17,15 @@ DockDaily.init({
         comment: "水情"
     },
     quality: {
-        type:JSON,
+        type: JSON,
         comment: "生产，安全，服务质量"
     },
-
 
 
 }, {
     sequelize,
     modelName: "dock_daily"
 })
+module.exports = {
+    DockDaily
+}
