@@ -10,8 +10,9 @@ const {PSZXDailyDetail} = require('./pszx_daily_detail')
 const {DockDaily} = require('./dock_daily');
 const {DockDetail} = require('./dock_detail');
 const {DockBulkCommodity} = require('./dock_bulk_commodity');
-const {FcwlDaily}=require('./fcwl_daily');
-const {fcDetail}=require('./dock_detail')
+const {FcwlDaily} = require('./fcwl_daily');
+const {FcwlDetail} = require('./fcwl_detail')
+
 function init() {
     WlDaily.hasMany(WlDailyDispatcher, {
         foreignKey: "wl_daily_id"
@@ -52,6 +53,7 @@ function init() {
             foreignKey: "dock_daily_id"
         }
     );
+
     sequelize.sync({force: false});
 }
 

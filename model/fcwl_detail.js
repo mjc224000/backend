@@ -60,4 +60,7 @@ FcwlDetail.init({
         type: STRING,
         comment: "实际完成"
     },
+},{
+    sequelize,
+    modelName:""
 })
