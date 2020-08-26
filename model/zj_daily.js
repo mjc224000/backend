@@ -27,4 +27,7 @@ ZjDaily.init({
         comment: "概览"
     }
 
-})
+}, {sequelize,modelName:"zj_daily"})
+module.exports = {
+    ZjDaily
+}

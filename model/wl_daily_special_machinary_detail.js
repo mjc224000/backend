@@ -18,10 +18,8 @@ WlDailySpecialMachineryDetail.init({
         }
     },
     types: STRING,
-    outside_num: INTEGER,
-    num: INTEGER,
+     num: INTEGER,
     disc: TEXT,
-    overview: JSON,
 
 }, {
     modelName: "wl_dailySpecial_machinery_detail",

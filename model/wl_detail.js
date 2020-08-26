@@ -21,7 +21,8 @@ WlDetail.init(
                 model: WlDaily,
                 key: "id"
             }
-        }, department_id: {
+        },
+        department_id: {
             type: INTEGER,
             references: {
                 model: Department,
