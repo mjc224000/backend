@@ -1,7 +1,7 @@
 let tool = require('./utils/xls_import')
 let express = require('express');
 const xlsx = require("node-xlsx");
-
+let i=require('./utils/xls_import')
 let {init} = require('./model/init');
 
 init();
@@ -11,6 +11,3 @@ data.forEach(function (item) {
     //console.log(item.data)
 })
 app.listen(8887);
-
-
-

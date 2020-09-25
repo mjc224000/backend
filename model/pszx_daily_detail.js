@@ -27,19 +27,19 @@ PSZXDailyDetail.init(
         planed: {
             type: FLOAT,
             comment: "计划量"
+        }
+        , planed_vehicles: {
+            type: INTEGER,
+            comment: "计划车辆"
         },
         remain: {
             type: FLOAT,
             comment: "剩余"
-        },
-        output: {
-            type: FLOAT,
-            comment: "出库量"
-        },
-        outside: {
-            type: FLOAT,
-            comment: "外委作业量"
-        },
+        }, remain_vehicles: {
+            type: INTEGER,
+            comment: "剩余车数"
+        }
+        ,
         actual_weight: {
             type: FLOAT,
             comment: "实际重量"
@@ -48,9 +48,17 @@ PSZXDailyDetail.init(
             type: INTEGER,
             comment: "实装车数"
         },
+        unfinished_vehicles: {
+            type:INTEGER,
+            comment:"未装车数"
+        },
         stock: {
             type: INTEGER,
             comment: "库存"
+        },
+        month_acc:{
+            type:INTEGER,
+            comment:""
         },
         comment: {
             type: STRING,

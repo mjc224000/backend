@@ -28,6 +28,11 @@ FcwlDetail.init({
         type: STRING,
         comment: "货物名称"
     },
+    transportation_facility: {
+        type: STRING,
+        comment: "运输工具类别"
+    }
+    ,
     type: {
         type: STRING,
         comment: "类别 运输"
@@ -60,7 +65,7 @@ FcwlDetail.init({
         type: STRING,
         comment: "实际完成"
     },
-},{
+}, {
     sequelize,
-    modelName:""
+    modelName: ""
 })

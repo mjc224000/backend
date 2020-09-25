@@ -16,11 +16,7 @@ RZYWagonDetail.init(
             type: STRING,
             comment: "作业地区"
         },
-        quantity: {
-            type: FLOAT,
-            comment: "作业量"
-        },
-        input: {
+       input: {
             type: FLOAT,
             comment: "入库量"
         },
@@ -31,7 +27,24 @@ RZYWagonDetail.init(
         remain: {
             type: FLOAT,
             comment: "剩余"
-        }
+        },
+        wagons: {
+            type: INTEGER,
+            comment: "车皮数"
+        },
+        month_wagons_acc:{
+            type:INTEGER,
+            comment:"月累车皮数（节）"
+        },
+        year_wagons_acc:{
+            type:INTEGER,
+            comment:"月累车皮数（节）"
+        },
+        month_job_acc:{
+            type:INTEGER,
+            comment:"年累计作业量(T)"
+        },
+
 
     }
 )

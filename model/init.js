@@ -54,9 +54,10 @@ function init() {
         }
     );
 
-    sequelize.sync({force: false});
+    sequelize.sync({force: true});
 }
 
 module.exports = {
     init
 }
+

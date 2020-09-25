@@ -22,7 +22,7 @@ WlDetail.init(
                 key: "id"
             }
         },
-        department_id: {
+        cdepartment_id: {
             type: INTEGER,
             references: {
                 model: Department,
@@ -47,7 +47,7 @@ WlDetail.init(
          */
         planed: STRING,
         /**
-         * 实际装量
+         * 实际装量 车
          * 如果是本部就会填写真实车数，填写外委就是没有真实车数。
          * params number|外委
          */

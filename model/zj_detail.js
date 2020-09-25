@@ -18,7 +18,7 @@ ZjDetail.init({
             key: "id"
         }
     },
-    car_type:{
+    vehicle_type:{
         type:STRING,
         comment:"车辆类型"
     },
@@ -38,7 +38,7 @@ ZjDetail.init({
         type:STRING,
         comment:"计划量"
     },
-    cars:{
+    actual:{
         type:INTEGER,
         comment:"实际完成车"
     }

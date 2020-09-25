@@ -23,6 +23,10 @@ RZYDailyDetail.init(
             type: STRING,
             comment: "作业地区"
         },
+        load_name:{
+          type:STRING,
+          comment:"货名"
+        },
         quantity: {
             type: FLOAT,
             comment: "作业量"
