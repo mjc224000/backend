@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const {Model, INTEGER, STRING, DATE, JSON} = Sequelize;
+const {Model, INTEGER, STRING, DATE, JSON,BOOLEAN} = Sequelize;
 const {sequelize} = require('./com');
 
 class WlDaily extends Model {
@@ -19,7 +19,11 @@ WlDaily.init({
     record_date: {
         type: DATE,
         comment: "统计时间"
-    },
+    }, valid: {
+        type: BOOLEAN,
+        comment: "是否有效"
+    }
+    ,
     overview: {
         type: JSON,
         comment: "概览"
@@ -28,9 +32,7 @@ WlDaily.init({
 }, {sequelize, modelName: "wl_daily", timestamps: true})
 
 function insert() {
-    WlDaily.create({
-        duty: JSON.stringify({a: "nmsl", b: "wsnd"}),
-    })
+
 }
 
 module.exports = {

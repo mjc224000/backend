@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const {Dispatcher} = require("./dispatcher");
+
 const {sequelize} = require("./com");
 const {Model, INTEGER, STRING, JSON, DATE, FLOAT, TEXT} = Sequelize;
 const {WlDaily} = require('./wl_daily');

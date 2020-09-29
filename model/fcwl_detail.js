@@ -67,5 +67,9 @@ FcwlDetail.init({
     },
 }, {
     sequelize,
-    modelName: ""
+    modelName: "fcw_detail"
 })
+
+module.export={
+    FcwlDetail
+}

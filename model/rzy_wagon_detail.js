@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const {sequelize}=require('./com');
 const {Model, INTEGER, STRING, JSON, DATE, FLOAT} = Sequelize;
 
 class RZYWagonDetail extends Model {
@@ -46,6 +47,9 @@ RZYWagonDetail.init(
         },
 
 
+    },{
+        sequelize,
+        modelName:"rzy_wagon_detail"
     }
 )
 module.exports = {

@@ -22,7 +22,7 @@ WlDetail.init(
                 key: "id"
             }
         },
-        cdepartment_id: {
+        department_id: {
             type: INTEGER,
             references: {
                 model: Department,
@@ -52,7 +52,7 @@ WlDetail.init(
          * params number|外委
          */
         actual: STRING,
-        finished: FLOAT
+        finished: STRING
 
     }, {sequelize, modelName: "wl_detail"})
 

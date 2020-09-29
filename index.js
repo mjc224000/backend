@@ -1,13 +1,20 @@
-let tool = require('./utils/xls_import')
 let express = require('express');
 const xlsx = require("node-xlsx");
-let i=require('./utils/xls_import')
+const fileRoute = require('./controller/file');
+const {initData, makeWlData} = require('./utils/makeData')
+let i = require('./utils/xls_import')
 let {init} = require('./model/init');
+let tool = require('./utils/xls_import')
 
-init();
-let data = xlsx.parse('./28.xlsx');
 let app = express();
-data.forEach(function (item) {
-    //console.log(item.data)
-})
+app.use('/file', fileRoute);
+
+async function main() {
+    await init();
+    await initData();
+    await makeWlData();
+}
+
+main();
+
 app.listen(8887);

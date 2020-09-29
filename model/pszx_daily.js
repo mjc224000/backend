@@ -18,7 +18,7 @@ PSZXDaily.init({
     },
 
 
-}, {sequelize, modelName: "wl_daily", timestamps: true})
+}, {sequelize, modelName: "pszx_daily", timestamps: true})
 
 module.exports = {
     PSZXDaily

@@ -49,6 +49,8 @@ function autoAssemble({
                 hash[key] = row[col] && row[col].toString().trim() || hash[key];
                 if (row[col] === 0)
                     hash[key] = 0;
+                if (hash[key] === '/')
+                    hash[key] = null;
             }
             ret.push({...hash})
         }
@@ -78,6 +80,19 @@ function autoAssemble({
 
 }
 
+function getRecorder(data) {
+    if (!data || data.length === 0)
+        return {}
+    try {
+        let row = data = data[0];
+        let name = row[1];
+        let job_date = row[6];
+
+        return {name, job_date: formatDate(job_date)};
+    } catch (e) {
+        return e;
+    }
+}
 
 const assembleWlDaily = (data) => {
     return autoAssemble({
@@ -234,7 +249,7 @@ const assembleDockDetail = (data) => {
             "石龙",
             "鹧鸪江",
             "猛山", "二塘", '广钢'],
-   })
+    })
 }
 
 
@@ -245,7 +260,8 @@ module.exports = {
     assembleRzyDaily,
     assemblePszxDailyDetail,
     assembleRzyWagonDetail,
-    assembleDockDetail
+    assembleDockDetail,
+    getRecorder
 
 }
 
