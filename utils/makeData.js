@@ -12,17 +12,13 @@ const {assembleWlDaily, getRecorder} = require('./xls_import');
 async function makeWlData() {
     let d = xlsx.parse(path.resolve('./utils/wl_daily.xlsx'));
     d = d[0].data;
-
     let {name, job_date} = getRecorder(d);
     let wlData = assembleWlDaily(d)
     let {data, overviews} = wlData;
     const t = await sequelize.transaction();
     try {
-        let wd = await WlDaily.create({
-            job_date,
-            valid: true
-        }, {raw: true});
-        wd = wd['dataValues'];
+
+      let  wd = wd['dataValues'];
         let wl_daily_id = wd.id;
         for (let i = 0; i < data.length; i++) {
             let obj = data[i];
@@ -43,7 +39,6 @@ async function makeWlData() {
         }
         await t.commit();
     } catch (e) {
-        console.log(e);
         await t.rollback()
     }
 }

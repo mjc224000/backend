@@ -56,7 +56,7 @@ async function init() {
         }
     );
 
-  await  sequelize.sync({force: true});
+  await  sequelize.sync({force: false});
 }
 
 module.exports = {
