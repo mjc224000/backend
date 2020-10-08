@@ -32,9 +32,10 @@ router.post('/', function (req, res) {
         let p = file.path;
         let d = xlsx.parse(p);
         d = d[0].data;
+
         let {name, job_date} = getRecorder(d);
         let {data, overviews} = assembleWlDaily(d);
-        console.log(data);
+        console.log(job_date);
         const t = await sequelize.transaction();
         try {
             let wd = await WlDaily.create({
@@ -43,7 +44,7 @@ router.post('/', function (req, res) {
             }, {raw: true, transaction: t});
 
             let wl_daily_id = wd.id;
-            console.log(data.length);
+
             for (let i = 0; i < data.length; i++) {
                 let obj = data[i];
                 let {departmentName} = obj;
@@ -53,7 +54,7 @@ router.post('/', function (req, res) {
                         name: departmentName,
                     }, raw: true, transaction: t
                 });
-                console.log(department);
+
                 let wlDetail = await WlDetail.create({
                     wl_daily_id,
                     department_id: department['id'],

@@ -87,7 +87,7 @@ function getRecorder(data) {
         let row = data = data[0];
         let name = row[1];
         let job_date = row[6];
-
+        console.log(row,'row in date');
         return {name, job_date: formatDate(job_date)};
     } catch (e) {
         return e;
