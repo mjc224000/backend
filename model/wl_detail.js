@@ -52,7 +52,10 @@ WlDetail.init(
          * params number|外委
          */
         actual: STRING,
-        finished: STRING
+        finished: {
+            type: FLOAT,
+            defaultValue: 0.0
+        }
 
     }, {sequelize, modelName: "wl_detail"})
 

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const {Model, INTEGER, STRING, DATE, JSON,BOOLEAN} = Sequelize;
+const {Model, INTEGER, STRING, DATE, JSON, BOOLEAN} = Sequelize;
 const {sequelize} = require('./com');
 
 class WlDaily extends Model {
@@ -19,7 +19,8 @@ WlDaily.init({
     record_date: {
         type: DATE,
         comment: "统计时间"
-    }, valid: {
+    }
+    , valid: {
         type: BOOLEAN,
         comment: "是否有效"
     }
@@ -29,7 +30,12 @@ WlDaily.init({
         comment: "概览"
     }
 
-}, {sequelize, modelName: "wl_daily", timestamps: true})
+}, {
+    sequelize,
+    modelName: "wl_daily",
+    paranoid: true,
+    timestamps: true
+})
 
 function insert() {
 
